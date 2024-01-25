@@ -19,7 +19,7 @@ def addDevice(routerName, ipAddress, username, password):
                 VALUES( "'''+str(routerName)+'''", "'''+str(ipAddress)+'''", "'''+str(username)+'''", "'''+str(password)+'''")
               ''')
     dbsConnection.commit()
-    return " \nEntry has been added\n"
+    return " \nEntry has been added"
     
 def deleteDevice(ipAddress):
     conCursor.execute('''
@@ -27,7 +27,7 @@ def deleteDevice(ipAddress):
             WHERE ip_address = "'''+str(ipAddress)+'''"
           ''')
     dbsConnection.commit()
-    return "\nEntry has been deleted\n"
+    return "\nEntry has been deleted"
 
 def listDevices():
     conCursor.execute('SELECT router_name,ip_address,username,password FROM Router_Information')
